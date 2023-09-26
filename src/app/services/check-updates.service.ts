@@ -21,7 +21,7 @@ export class CheckUpdatesService {
     });
 
     const appIsStable$ = this.appRef.isStable.pipe(first(isStable => isStable === true));
-    const everySixHours$ = interval(10 * 1000);
+    const everySixHours$ = interval(6 * 60 * 60 * 1000);
     const checkUpdateVersion$ = concat(appIsStable$, everySixHours$);
 
     checkUpdateVersion$.subscribe(() => this.updates.checkForUpdate());
