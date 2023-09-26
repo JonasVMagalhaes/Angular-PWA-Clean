@@ -7,6 +7,7 @@
     "start:pwa": "ng build && http-server -p 8080 -c-1 dist/frontend-angular",
     "predeploy": "ng build --base-href=/frontend-angular/",
     "deploy": "npx gh-pages -d dist/frontend-angular",
+    "deploy:firebase": "npm run build && firebase deploy",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
